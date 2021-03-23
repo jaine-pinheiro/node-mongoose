@@ -25,7 +25,7 @@ const userRoute = (app) => {
                 const user = new UserModel(req.body)
                 await user.save()
 
-                res.status(201).send('OK')
+                res.status(201).send('OK - Inserido')
             } catch (error) {
                 res.send(error)   
             }
@@ -45,7 +45,7 @@ const userRoute = (app) => {
                 console.log(updatedUser)
 
                 if (updatedUser) {
-                    return res.status(200).send('OK')
+                    return res.status(200).send('OK - Atualizado')
                 }
 
 
@@ -68,7 +68,7 @@ const userRoute = (app) => {
                 const deletedUser = await UserModel.deleteOne({ _id: id })
 
                 if (deletedUser.deletedCount) {
-                    return res.send('OK')
+                    return res.send('OK - Removido')
                 }
 
                 res.status(400).send({ error: 'Could not delete the user' })
