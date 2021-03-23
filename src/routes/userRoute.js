@@ -48,10 +48,7 @@ const userRoute = (app) => {
                     return res.status(200).send('OK - Atualizado')
                 }
 
-
                 res.status(400).send({ error: 'Could not update the user' })
-
-                
             } catch (error) {
                 res.send(error)
             }
